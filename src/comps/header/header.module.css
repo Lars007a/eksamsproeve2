@@ -1,0 +1,41 @@
+.header {
+  width: 100%; /* behøves ikke siden block element. */
+  height: 100svh; /* svh siden telefon, så telefon navbaren ikke bliver beregnet med i vh, hvilket den gør. */
+  position: relative; /* så .img element inden i kan positioneres ordentligt. */
+
+  display: grid;
+  place-content: center; /* positioner texten, ikke .img, men .text center, ikke .img siden den er abselut positioneret. */
+
+  @media (width > 750px) {
+  }
+
+  .img {
+    position: absolute; /* abselut relative til header, siden den er tættest positioneret element. */
+    inset-block: 0; /* top: 0, bottom: 0 */
+    inset-inline: 0; /* left: 0; right: 0; */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: -1; /* så texten kan komme foran. */
+
+    filter: contrast(70%);
+  }
+
+  .text {
+    color: var(--white);
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  .text > h1 {
+    font-size: 50px;
+  }
+
+  .text h2 {
+    font-size: 40px;
+  }
+
+  .text h3 {
+    font-size: 25px;
+  }
+}
