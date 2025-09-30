@@ -23,19 +23,19 @@ h6,
 }
 
 h1 {
-  font-size: 36px;
+  font-size: 40px;
 }
 
 h2 {
-  font-size: 32px;
+  font-size: 36px;
 }
 
 h3 {
-  font-size: 28px;
+  font-size: 32px;
 }
 
 h4 {
-  font-size: 26px;
+  font-size: 28px;
 }
 
 h5 {
@@ -51,7 +51,7 @@ strong,
 span,
 li,
 a {
-  font-size: 18px;
+  font-size: 20px;
   font-family: "Kurale", serif;
 }
 

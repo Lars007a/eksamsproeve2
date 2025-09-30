@@ -17,7 +17,7 @@ export default function Navbar() {
   };
 
   const handleScroll = (event) => {
-    if (window.scrollY > 400) {
+    if (window.scrollY > 150) {
       setScrollActive(true);
     } else {
       setScrollActive(false);
