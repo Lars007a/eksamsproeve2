@@ -16,7 +16,8 @@ h2,
 h3,
 h4,
 h5,
-h6 {
+h6,
+.titleFont {
   font-family: "Just Another Hand", cursive;
   font-weight: 400;
 }
@@ -47,12 +48,19 @@ h6 {
 
 p,
 strong,
-span {
+span,
+li,
+a {
   font-size: 18px;
   font-family: "Kurale", serif;
 }
 
 .container {
-  width: min(960px, calc(100% - 5rem));
+  width: min(960px, calc(100% - 2rem));
   margin-inline: auto;
+}
+
+a,
+button {
+  cursor: pointer;
 }

@@ -6,7 +6,8 @@
   display: grid;
   place-content: center; /* positioner texten, ikke .img, men .text center, ikke .img siden den er abselut positioneret. */
 
-  @media (width > 750px) {
+  @media (width > 1024px) {
+    height: 100vh;
   }
 
   .img {
@@ -18,7 +19,7 @@
     background-size: cover;
     z-index: -1; /* så texten kan komme foran. */
 
-    filter: contrast(70%);
+    filter: contrast(65%);
   }
 
   .text {
@@ -28,14 +29,14 @@
   }
 
   .text > h1 {
-    font-size: 50px;
+    font-size: clamp(3rem, 7.5vw, 6.5rem);
   }
 
   .text h2 {
-    font-size: 40px;
+    font-size: clamp(2.5rem, 5vw, 5.5rem);
   }
 
   .text h3 {
-    font-size: 25px;
+    font-size: clamp(2rem, 3.5vw, 4.5rem);
   }
 }

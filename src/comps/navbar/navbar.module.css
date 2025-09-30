@@ -1,0 +1,115 @@
+.nav {
+  width: 100%;
+  background-color: transparent;
+  position: fixed;
+  z-index: 1; /* så at den er foran headeren, og dermed kan klikkes på, osv. */
+  transition: background-color 0.2s, box-shadow 0.2s;
+
+  &.scroll:has(:not(.activeMenu.active)) {
+    background-color: var(--grey);
+    box-shadow: 0px 2px 4px 2px rgba(0, 0, 0, 0.3);
+  }
+
+  > .content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-block: 4px;
+  }
+
+  > .content .logoImg {
+    cursor: pointer;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    height: 43px;
+    width: auto;
+
+    aspect-ratio: 1/1;
+  }
+
+  > .content > .btns {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+  }
+
+  > .content > .btns .cartImg {
+    cursor: pointer;
+    aspect-ratio: 1/1;
+    height: 53px;
+    width: auto;
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  > .content > .btns > .hamburger {
+    cursor: pointer;
+
+    > .line {
+      height: 3px;
+      width: 32px;
+      background-color: var(--white);
+      transition: 0.2s;
+      &:has(+ .line) {
+        margin-bottom: 6px;
+      }
+    }
+
+    &.active {
+      z-index: 11; /* så den kommer over mobilnavbaren, når den er fremme, som har z-index: 10, og scroller stadigvæk ned, siden positioneret med navbaren, som er fixed eller noget lignende. */
+      > .line:nth-child(1) {
+        transform: translateY(9px) rotate(45deg);
+      }
+
+      > .line:nth-child(2) {
+        opacity: 0;
+      }
+
+      > .line:nth-child(3) {
+        transform: translateY(-9px) rotate(-45deg);
+      }
+    }
+  }
+
+  > .content > .activeMenu {
+    display: none;
+  }
+
+  > .content > .activeMenu.active {
+    z-index: 10; /* så er over navbaren, hvilket har 1, samt over alt andet, på nær hamburger menuen, som har 11  */
+    position: fixed;
+    inset: 0;
+    background-color: var(--grey);
+
+    display: grid;
+    place-content: center;
+
+    > ul {
+      list-style-type: none;
+    }
+
+    > ul li {
+      text-align: center;
+      padding-block: 12px;
+    }
+
+    > ul li:has(+ li) {
+    }
+
+    > ul li a {
+      text-decoration: none;
+      color: var(--white);
+      font-size: clamp(30px, 3vw, 35px);
+    }
+
+    > ul li a:hover {
+      color: orangered; /* to be changed. */
+    }
+  }
+}
