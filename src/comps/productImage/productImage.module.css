@@ -1,7 +1,16 @@
 .productImage {
-    position: relative; /* boksen der holder på teksten og billedet, relativ så teksten kan positioneres i midten. */
-    display: grid;
-    place-content: center;
+    
+    > .imgCon {
+        width: 50%;
+        margin: 0 auto;
+        position: relative; /* boksen der holder på teksten og billedet, relativ så teksten kan positioneres i midten. */
+
+         @media(width < 600px) {
+            width: 100%;
+         }
+    }
+
+
      img {
         width: 100%;
         height: auto;
@@ -18,7 +27,7 @@
         */
         width: 100%;
         text-align: center;
-        font-size: clamp(20px, 4vw, 45px);
+        font-size: clamp(20px, 5vw, 45px);
 
         text-shadow: 0px 2px 4px rgba(0,0,0,0.5);
     }
