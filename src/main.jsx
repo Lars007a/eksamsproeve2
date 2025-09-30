@@ -5,6 +5,7 @@ import "@fontsource/kurale";
 import "./index.css";
 import Navbar from "./comps/navbar/navbar.jsx";
 import Header from "./comps/header/header.jsx";
+import Footer from "./comps/footer/footer.jsx";
 import { BrowserRouter } from "react-router-dom";
 
 createRoot(document.getElementById("root")).render(
@@ -13,6 +14,7 @@ createRoot(document.getElementById("root")).render(
       <Navbar />
       <Header textOne={"Den"} textTwo={"Glade"} textThree={"Skorbe"} />
       <div style={{ height: "100vh" }}></div>
+      <Footer/>
     </BrowserRouter>
   </StrictMode>
 );
