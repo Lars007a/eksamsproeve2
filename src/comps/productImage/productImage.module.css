@@ -1,0 +1,25 @@
+.productImage {
+    position: relative; /* boksen der holder på teksten og billedet, relativ så teksten kan positioneres i midten. */
+    display: grid;
+    place-content: center;
+     img {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 1/1;
+    }
+
+     .title {
+        position: absolute;
+        z-index: 0; /* så højere end billedet. */
+         top: 50%;
+         left: 50%;
+         transform: translateY(-50%) translateX(-50%); /* for at få den i midten, 50% top, og transform translate -50%. 
+        transform translate -50% for den i forhold til sin egen størrelse, fordi at den bliver puttet efter 50% ved top 50%, og det retter transform translate op på.
+        */
+        width: 100%;
+        text-align: center;
+        font-size: clamp(20px, 4vw, 45px);
+
+        text-shadow: 0px 2px 4px rgba(0,0,0,0.5);
+    }
+}

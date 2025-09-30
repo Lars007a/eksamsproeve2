@@ -6,7 +6,7 @@ export default function Introsec({title, text}) {
         <div className={`container ${styles.content}`}>
 
         <h1>{title}</h1>
-        <p>{text}</p>
+        {text && <p>{text}</p>}
         </div>
     </section>
 }
