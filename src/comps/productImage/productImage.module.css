@@ -1,4 +1,5 @@
 .productImage {
+    cursor: pointer;
     
     > .imgCon {
         width: 50%;

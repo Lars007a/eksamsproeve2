@@ -1,0 +1,95 @@
+.detailsPage {
+    display: flex;
+    flex-direction: column;
+
+    @media(width > 600px) {
+        flex-direction: row;
+    }
+
+    > div {
+        flex: 1;
+        padding-block: 12px;
+    }
+
+    .imgBox {
+        display: grid;
+        place-content: center;
+        > img {
+            aspect-ratio: 1/1;
+            height: 100%;
+            width: auto;
+            margin-block: auto;
+            margin-inline: auto;
+        }
+    }
+
+    .infoBox {
+        display: grid;
+        place-content: center;
+        background-color: var(--mainColor);
+    }
+
+    .infoBox h1 {
+        color: var(--white);
+        -webkit-text-stroke: 1px var(--black);
+        margin-bottom: 10px;
+        text-align: center;
+    }
+
+    .infoBox > .ing {
+        text-align: center;
+    }
+
+    .infoBox > .ing > p:has(+p) {
+        margin-bottom: 8px;
+    }
+
+    .infoBox > .ing > select {
+        margin-top: 8px;
+        padding-block: 8px;
+        padding-inline: 10px;
+        background-color: var(--white);
+        outline:none;
+        border: none;
+        box-shadow: 0px 2px 4px rgba(0,0,0,0.2);
+        
+    }
+}
+
+.priceSec {
+    padding-block-end: 20px;
+    > select {
+        padding-block: 8px;
+        padding-inline: 20px;
+        background-color: var(--mainColor);
+        outline:none;
+        border: none;
+        box-shadow: 0px 4px 8px rgba(0,0,0,0.3);
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    > h2 {
+        text-align: center;
+        display: block;
+
+        &:has(+ h2) {
+            margin-bottom: 8px;
+        }
+    }
+}
+
+.orderSec button {
+    background-color: var(--grey);
+    color: var(--white);
+    border-radius: 365px;
+    font-size: 22px;
+    transition: background-color 0.2s;
+    padding-block: 12px;
+    padding-inline: 15px;
+    width: 100%;
+
+    &:hover {
+            background-color: var(--black);
+        }
+}

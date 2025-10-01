@@ -1,7 +1,9 @@
 import styles from "./productImage.module.css";
 
 export default function ProductImage({img, title, link}) {
-    return <article className={styles.productImage}>
+    return <article onClick={() => {
+        link();
+    }} className={styles.productImage}>
         <div className={styles.imgCon}>
 
             <img src={img} alt={title}/>

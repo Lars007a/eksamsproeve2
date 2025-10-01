@@ -9,6 +9,8 @@ export function useSendGetRequest(endpoint) {
     const [loading, setLoading] = useState(true);
 
     function get(endpoint) {
+        setLoading(true);
+        setError(null);
       fetch(`${apiUrl}/${endpoint}`, {
             method: "GET",
             headers: {

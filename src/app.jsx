@@ -31,6 +31,10 @@ export default function App() {
       path: "/contact",
       element: <Contact />,
     },
+        {
+      path: "/dish/:id",
+      element: <DishPage />,
+    },
     {
       path: "/backoffice",
       element: <Backoffice />,
