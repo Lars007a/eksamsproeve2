@@ -1,0 +1,17 @@
+.box {
+  background-color: red;
+  margin-inline: auto;
+
+  padding-block: 20px;
+  border-radius: 10px;
+
+  &.margin {
+    margin-block: 10px;
+  }
+
+  > p {
+    color: var(--white);
+    text-align: center;
+    padding-inline: 12px;
+  }
+}

@@ -1,0 +1,16 @@
+.teams {
+  padding-block: 20px;
+
+  > .grid {
+    width: min(100%, 700px);
+    margin-inline: auto;
+    gap: 20px;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(100px, 1fr));
+
+    @media (width < 400px) {
+      grid-template-columns: auto;
+      grid-template-rows: repeat(auto-fill, 1fr);
+    }
+  }
+}

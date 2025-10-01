@@ -1,0 +1,17 @@
+.con {
+  width: min(100%, 400px);
+  margin: 0 auto;
+
+  display: grid;
+  place-content: center;
+  padding-block: 10px;
+  padding-inline: 10px;
+
+  &.margin {
+    margin-block: 10px;
+  }
+
+  span {
+    border-color: var(--grey) var(--grey) transparent !important;
+  }
+}

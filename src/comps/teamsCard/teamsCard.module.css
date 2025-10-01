@@ -1,0 +1,21 @@
+.card {
+  img {
+    display: block;
+    margin-inline: auto;
+    width: min(75%, 200px);
+    height: auto;
+    aspect-ratio: 1/1;
+  }
+
+  .info {
+    text-align: center;
+    margin-top: 10px;
+  }
+
+  .info > p:has(+ p) {
+  }
+
+  .info > p {
+    text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
+  }
+}
