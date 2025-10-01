@@ -1,7 +1,7 @@
 import styles from "./teamsSec.module.css";
 import TeamsCard from "../teamsCard/teamsCard";
 import { useSendGetRequest } from "../../hooks/useSendReq";
-import ErrorBox from "../errorBox/errorBox";
+import MsgBox from "../msgBox/msgBox";
 import LoadingSpinner from "../spinner/spinner";
 
 export default function teamsSec({}) {
@@ -10,7 +10,7 @@ export default function teamsSec({}) {
   return (
     <>
       {res.loading && <LoadingSpinner />}
-      {res.error && <ErrorBox errorMsg={res.error} />}
+      {res.error && <MsgBox msg={res.error} />}
       <section className={`${styles.teams} container`}>
         <div className={styles.grid}>
           {res?.data &&

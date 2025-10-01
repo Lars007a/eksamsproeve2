@@ -9,6 +9,10 @@
     margin-block: 10px;
   }
 
+  &.success {
+    background-color: green;
+  }
+
   > p {
     color: var(--white);
     text-align: center;

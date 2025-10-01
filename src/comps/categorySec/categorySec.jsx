@@ -3,7 +3,7 @@ import { useSendGetRequest } from "../../hooks/useSendReq.jsx";
 import { useEffect, useState } from "react";
 import ProductImage from "../productImage/productImage.jsx";
 import LoadingSpinner from "../spinner/spinner.jsx";
-import ErrorBox from "../errorBox/errorBox.jsx";
+import MsgBox from "../msgBox/msgBox.jsx";
 
 export default function CategorySec({}) {
   const cats = useSendGetRequest("categories");
@@ -36,7 +36,7 @@ export default function CategorySec({}) {
       {dishes.loading && cats.loading ? (
         <LoadingSpinner margin={true} />
       ) : dishes.error && cats.error ? (
-        <ErrorBox margin={true} errorMsg={"Skete en fejl. Prøv igen."} />
+        <MsgBox margin={true} msg={dishes.error || cats.error} />
       ) : (
         <>
           <section className={styles.categories}>
