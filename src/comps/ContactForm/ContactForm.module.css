@@ -1,0 +1,55 @@
+.form {
+    padding-block: 20px;
+    background-color: var(--mainColor);
+
+
+    > .content {
+
+    }
+
+    > .content form {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+    }
+
+    > .content > form > input, .content > form > textarea {
+        width: 100%;
+        padding-block: 8px;
+        padding-inline: 10px;
+        border: 0;
+        outline:none;
+    }
+
+    > .content > form > input[type="text"], .content > form > textarea {
+        background-color: transparent;
+        border: 1px solid var(--grey);
+        box-shadow: 0px 0px 4px rgba(0,0,0,0.3);
+        transition: border 0.2s;
+    }
+
+     > .content > form > textarea {
+        resize:vertical;
+        height: 200px;
+    }
+
+    > .content > form > input[type="text"]:focus, > .content > form > textarea:focus {
+        border-width: 1px;
+        border-style: solid;
+        border-color: orangered;
+    }
+
+    > .content > form > input[type="submit"] {
+        background-color: var(--grey);
+        color: var(--white);
+        border-radius: 365px;
+        font-size: 22px;
+        transition: background-color 0.2s;
+    }
+
+    > .content > form > input[type="submit"]:hover {
+        background-color: var(--black);
+    }
+
+
+}

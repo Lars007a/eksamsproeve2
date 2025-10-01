@@ -5,8 +5,8 @@ export default function TeamsCard({ img, name, title }) {
     <article className={styles.card}>
       <img src={img} alt={`${name} ${title}`} />
       <div className={styles.info}>
-        <p>{name}</p>
-        <p>{title}</p>
+        <p className="textShadow">{name}</p>
+        <p className="textShadow">{title}</p>
       </div>
     </article>
   );

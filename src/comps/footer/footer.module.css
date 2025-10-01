@@ -35,7 +35,6 @@
             text-decoration: none;
             color: var(--white);
             display: inline-block;
-            padding-inline: 20px;
             font-size: 24px;
             padding-block: 5px;
         }
