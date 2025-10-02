@@ -65,7 +65,7 @@ input, textarea, select, option {
 }
 
 a,
-button, input[type="submit"] {
+button, input[type="submit"], select, option {
   cursor: pointer;
 }
 
