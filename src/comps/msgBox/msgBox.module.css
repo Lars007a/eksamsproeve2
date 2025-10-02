@@ -9,9 +9,6 @@
     margin-block: 10px;
   }
 
-  &.success {
-    background-color: green;
-  }
 
   > p {
     color: var(--white);
@@ -19,3 +16,7 @@
     padding-inline: 12px;
   }
 }
+
+.success {
+    background-color: green;
+  }
