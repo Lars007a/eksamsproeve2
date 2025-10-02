@@ -70,7 +70,7 @@ export default function CartDisplay({}) {
 
 
     return <section className={styles.CartDisplay}>
-        <div className={`container ${styles.content}`}>
+       {cart.cart.length > 0 ?  <div className={`container ${styles.content}`}>
             <div className={styles.grid}>
 
             {cart.cart.map((element, index) => {
@@ -92,6 +92,6 @@ export default function CartDisplay({}) {
                 <MsgBox msg={success} margin={true} success={true}/>
                 }
             </div>
-        </div>
+        </div> : <p className={`${styles.empty} textShadow`}>Kurven er tom.</p>}
     </section>
 }
