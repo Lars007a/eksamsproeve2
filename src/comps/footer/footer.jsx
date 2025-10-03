@@ -7,9 +7,10 @@ import { useState, useEffect } from "react";
 export default function Footer({}) {
 
     const [show, setShow] = useState(true);
-    const loc = useLocation();
+    const loc = useLocation(); /* så vi kan få url. */
 
     useEffect(() => {
+        //Så at component ikke vises på backoffice.
         if(loc.pathname.includes("/backoffice")) {
             setShow(false);
         }else setShow(true);

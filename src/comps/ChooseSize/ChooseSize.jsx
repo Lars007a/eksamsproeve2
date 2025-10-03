@@ -11,7 +11,7 @@ export default function ChooseSize({priceObj={} /* dish produkt type og pris obj
     const priceSelectElement = useRef(null); //Ref til pris selector dom elementet, hvor man vælger hvilket type af produktet, og dermed pris, man ville have.
     
     const handlePriceSelector = (event) => { //Når man ændre på hvilken type man ville have, familie, normal, etc, etc.
-        selectedPrice.set(priceObj[event.target.value]); //Går ind i dish/porudkt objektet, og tager dens price objekt, og tager så dens key der dynamisk matcher den key, som der blev valgt i dropdownen.
+        selectedPrice.set(priceObj[event.target.value]); //Går ind i dish/porudkt objektets price objekt, og tager så dens key der dynamisk matcher den key, som der blev valgt i dropdownen.
     }
 
     useEffect(() => {

@@ -17,8 +17,9 @@ export default function CartCard({cartObj, errorSetter}) {
             return;
         }
 
-        //Skal ikke opdater state her, siden den cart der bliver loopet igennem
+        //Skal ikke opdater state her, siden den cart der bliver loopet igennem, der bliver vist,
         //er useLocalStorage hooket's variabler, og den der bliver ændret af mit eget custom hook.
+        //removefromcart, og dermed opdater siden automatisk.
     }
 
     return <article className={styles.CartCard}>

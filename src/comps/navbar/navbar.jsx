@@ -6,32 +6,33 @@ import { useEffect, useState } from "react";
 import useCart from "../../hooks/useCart.jsx";
 
 export default function Navbar() {
-  const [active, setActive] = useState(false);
-  const [scrollActive, setScrollActive] = useState(false);
+  const [active, setActive] = useState(false); /* om den fulde, mobil hamburger clicked, nav er aktiv. */
+  const [scrollActive, setScrollActive] = useState(false); /* om scroll effekten er aktiv. */
 
-  const [showNav, setShowNav] = useState(true);
-  const loc = useLocation();
+  const [showNav, setShowNav] = useState(true); /* om navbaren overhovedet skal vises. */
+  const loc = useLocation(); /* få at få urlet. */
 
-  const cart = useCart();
-  const [cartLength, setCartLength] = useState(0);
+  const cart = useCart(); /* kurven */
+  const [cartLength, setCartLength] = useState(0); /* hvor mange produkter der er i kurven */
 
   useEffect(() => {
-
+    //Beregner hvor mange produkter der er i kurven.
     let temp = 0;
     for(let i = 0; i < cart.cart.length; i++) {
       temp = temp + cart.cart[i].ammount;
     }
-    console.log(temp);
     setCartLength(temp);
   }, [cart.cart])
 
   useEffect(() => {
+    //Fjerner navbaren fra /backoffice.
     if(loc.pathname.includes("/backoffice")) {
       setShowNav(false);
     }else setShowNav(true);
 
   }, [loc, loc.pathname])
 
+  //Toggle function til hamburger click.
   const toggle = (event) => {
     if (active) {
       setActive(false);
@@ -40,6 +41,7 @@ export default function Navbar() {
     }
   };
 
+  //Handlescroll function, der bliver tilføjet i useEffect når siden loader.
   const handleScroll = (event) => {
     if (window.scrollY > 150) {
       setScrollActive(true);
@@ -48,6 +50,7 @@ export default function Navbar() {
     }
   };
 
+  //Når siden loader, tilføj scroll handler, der tilføjer scrolleffect.
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
     return () => {

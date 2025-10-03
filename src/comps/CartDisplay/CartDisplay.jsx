@@ -20,15 +20,25 @@ export default function CartDisplay({}) {
     const textareaRef = useRef(null);
 
     const send = () => {
+
+        /* Når vi sender kurven afsted til serveren. */
+
         setError(null);
         setSuccess(null);
+        /* fjern eventuelle fejl beskeder. */
 
         if(cart.cart.length == 0) {
             setError("Skal være noget i kurven!");
             return;
-        }
+        } /* validere input */
 
-        let dishArray = [];
+        let dishArray = []; /* formattere kurvens array, så den passer til det, som 
+        api'en tager imod.
+
+        Hvilket sker ved at lave en ny array, og for hvert element i cart, looper vi over det,
+        og laver et nyt objekt med rigtig data formatteret ordentligt, 
+        som så bliver tilføjet til en nyArray, som bliver sendt til apien.
+        */
 
         for(let i = 0; i < cart.cart.length; i++) {
             let newObj = {};

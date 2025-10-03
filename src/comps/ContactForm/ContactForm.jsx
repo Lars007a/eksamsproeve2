@@ -19,6 +19,7 @@ export default function ContactForm({}) {
         event.preventDefault();
         setError(null);
         setSuccess(null);
+        /* fjern fejlbeskeder. */
 
         const form = event.target;
 
@@ -27,10 +28,11 @@ export default function ContactForm({}) {
         const name = fd.get("name");
         const subject = fd.get("subject");
         const description = fd.get("description");
+        /* få data fra formen. */
 
         if(!description || !name || !subject) {
             setError("Skal udfylde felterne!");
-            return;
+            return; /* form validering. */
         }
 
 

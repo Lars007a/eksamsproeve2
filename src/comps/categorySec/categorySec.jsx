@@ -7,10 +7,10 @@ import MsgBox from "../msgBox/msgBox.jsx";
 import { useNavigate } from "react-router-dom";
 
 export default function CategorySec({}) {
-  const cats = useSendGetRequest("categories");
-  const dishes = useSendGetRequest("dishes");
+  const cats = useSendGetRequest("categories"); /* få kategorierne fra apien. */
+  const dishes = useSendGetRequest("dishes"); /* få dishes produkter fra apien. */
   const [arrayToShow, setArrayToShow] = useState([]); //Arrayen der skal vises.
-  const nav = useNavigate();
+  const nav = useNavigate(); /* så vi kan navigere til en anden side. */
 
   useEffect(() => {
     if (dishes.data == null) return;

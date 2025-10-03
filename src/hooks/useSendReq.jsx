@@ -68,11 +68,11 @@ export function useSendDataRequest() {
             method: method,
             body: body
         }).then((val) => {
-            return val.json();
+            return val.json(); /* bare retunere json. */
         }).then((val) => {
-            return val;
+            return val; /* retunere json til caller. */
         }).catch((error) => {
-            throw error;
+            throw error; /* giv fejlen til caller. Deres problem. */
         });
 
         return promise;
