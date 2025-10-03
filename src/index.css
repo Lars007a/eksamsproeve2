@@ -50,7 +50,7 @@ p,
 strong,
 span,
 li,
-a, input, textarea, select, option {
+a, input, textarea, select, option, .normalFont {
   font-size: 20px;
   font-family: "Kurale", serif;
 }

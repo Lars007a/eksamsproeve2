@@ -19,7 +19,17 @@ export default function DishPage({}) {
 
   const [msg, setMsg] = useState(null);
 
+
+  const [idError, setIdError] = useState(null);
+  const checkerID = useCheckId();
+
 useEffect(() => {
+
+    if(!checkerID.validate(id)) {
+      setIdError("Loading fejl! Ikke ordentligt ID!");
+      return;
+    }
+
     dishProduct.get(`dish/${id}`)
 }, [id]);
 
@@ -36,23 +46,33 @@ useEffect(() => {
       const res = cart.addToCart({image: dishProduct.data.image, _id: dishProduct.data._id, title: dishProduct.data.title, ingredients: dishProduct.data.ingredients, category: dishProduct.data.category, price: selectedPrice, chosenExtra: chosenExtra, type: type})
       if(!res) return;
       setMsg("Tilføjede til kurven!");
-      
     }
 
 
   return (
     <>
       <Header textOne={"Den"} textTwo={"Glade"} textThree={dishProduct?.data?.title || "Skorbe"} />
-      {dishProduct.loading && <LoadingSpinner margin={true}/>}
-      {dishProduct.error != null ? <MsgBox msg={getReq.error} margin={true} success={false}/> : ""}
+      {dishProduct.loading && idError == null ? <LoadingSpinner margin={true}/> : ""}
+      {dishProduct.error != null ? <div className="container">
+        <MsgBox msg={dishProduct.error} margin={true} success={false}/>
+        </div>
+         : ""}
       {dishProduct?.data && <>
       <DishInfo img={dishProduct?.data.image} title={dishProduct?.data.title} productIngredients={dishProduct.data.ingredients} chosenExtra={{set: setChosenExtra, get: chosenExtra}}/>
       <ChooseSize priceObj={dishProduct.data.price} addFunc={addFunc} selectedPrice={{set: setSelectedPrice, get: selectedPrice}} />
-      {msg && <MsgBox margin={true} msg={msg} success={true}/>}
+      {msg && <div className="container">
+        
+        <MsgBox margin={true} msg={msg} success={true} setter={setMsg}/>
+        </div>
+        }
 
 
       </>
       }
+
+      {idError &&       <div className="container">
+        <MsgBox msg={idError} margin={true} success={false}/>
+      </div>}
     </>
   );
 }

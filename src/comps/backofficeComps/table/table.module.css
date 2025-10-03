@@ -1,0 +1,57 @@
+.tableCon {
+    overflow-x: auto; /* gør sådan at man kan scrolle, når tabellen bliver for stor. */
+ 
+ 
+ table {
+    width: 100%; /* så den er lige så stor som parrent tablecon, som også har container klassen. */
+    border-collapse: collapse; /* så der ikke er et lille mellemrum */
+  }
+
+  table img {
+    height: 50px;
+    width: auto;
+    object-fit: cover;
+  }
+
+  table thead {
+    background-color: var(--black);
+    color: var(--white);
+  }
+
+  th,
+  td {
+    padding: 8px 5px; /* padding top and bottom and left and right. */
+    text-align: left; /* så står i venstre side. */
+  }
+
+  td div {
+    max-height: 100px;
+    overflow: hidden;
+  }
+
+  tbody th,
+  tbody td {
+    border: 1px solid var(--grey);
+    color: var(--black);
+  }
+
+  tbody svg {
+    height: 20px;
+    width: auto;
+    color: var(--black);
+    cursor: pointer;
+  }
+
+  td:has(svg) {
+    text-align: center;
+  }
+
+  tbody svg:hover {
+    color: var(--secondaryBlack);
+  }
+
+  tbody tr:nth-child(even) {
+    background-color: var(--mainColor);
+    color: var(--black);
+  }
+}

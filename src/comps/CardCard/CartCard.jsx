@@ -11,7 +11,7 @@ export default function CartCard({cartObj, errorSetter}) {
 
     const deleteItem = () => {
         errorSetter(null);
-        const res = cart.removeFromCart(cartObj.item._id);
+        const res = cart.removeFromCart(cartObj);
         if(!res) {
             errorSetter("Skete en fejl.");
             return;

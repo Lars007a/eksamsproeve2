@@ -62,7 +62,20 @@ export function useSendDataRequest() {
     }
 
 
-    function sendForm() {
+    function sendForm(endpoint, method, body) {
+
+        const promise = fetch(`http://127.0.0.1:3042/${endpoint}`, {
+            method: method,
+            body: body
+        }).then((val) => {
+            return val.json();
+        }).then((val) => {
+            return val;
+        }).catch((error) => {
+            throw error;
+        });
+
+        return promise;
 
     }
 

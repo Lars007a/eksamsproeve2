@@ -4,6 +4,7 @@ import useCart from "../../hooks/useCart.jsx";
 import { useEffect, useRef, useState } from "react";
 import MsgBox from "../msgBox/msgBox.jsx";
 import { useSendDataRequest } from "../../hooks/useSendReq.jsx";
+import FullScreenSuccess from "../fullScreenSuccess/fullScreenSuccess.jsx";
 
 export default function CartDisplay({}) {
 
@@ -86,10 +87,10 @@ export default function CartDisplay({}) {
                 <textarea ref={textareaRef} name="msg" placeholder="Kommentar til ordren..."></textarea>
                 <button onClick={send} className="titleFont">Afgiv ordre</button>
                 {error &&
-                <MsgBox msg={error} margin={true} success={false}/>
+                <MsgBox msg={error} margin={true} success={false} setter={setError}/>
                 }
                 {success && 
-                <MsgBox msg={success} margin={true} success={true}/>
+                <FullScreenSuccess close={setSuccess} firstMsg={"Tak for din bestilling!"} />
                 }
             </div>
         </div> : <p className={`${styles.empty} textShadow`}>Kurven er tom.</p>}

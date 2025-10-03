@@ -1,9 +1,26 @@
 import styles from "./footer.module.css";
 import {Link} from "react-router-dom";
 import logo from "../../assets/logo.png";
+import { useLocation } from "react-router-dom";
+import { useState, useEffect } from "react";
 
 export default function Footer({}) {
-    return <footer className={styles.footer}>
+
+    const [show, setShow] = useState(true);
+    const loc = useLocation();
+
+    useEffect(() => {
+        if(loc.pathname.includes("/backoffice")) {
+            setShow(false);
+        }else setShow(true);
+    }, [loc, loc.pathname])
+
+
+    return <>
+    {show != true ? "" : 
+    
+    
+    <footer className={styles.footer}>
         <div className={`${styles.content} container`}>
 
         <div className={styles.imgCon}>
@@ -18,4 +35,6 @@ export default function Footer({}) {
         </div>
         </div>
     </footer>
+    }
+    </>
 }

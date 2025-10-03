@@ -2,6 +2,7 @@ import styles from "./ContactForm.module.css";
 import { useSendDataRequest } from "../../hooks/useSendReq";
 import { useState } from "react";
 import MsgBox from "../msgBox/msgBox";
+import FullScreenSuccess from "../fullScreenSuccess/fullScreenSuccess.jsx";
 
 export default function ContactForm({}) {
 
@@ -38,7 +39,7 @@ export default function ContactForm({}) {
                 throw new Error(val.message);
             }
             console.log(val);
-            setSuccess(val.message);
+            setSuccess(name);
         }).catch((error) => {
             setError(error.message);
         })
@@ -56,8 +57,10 @@ export default function ContactForm({}) {
                 <label htmlFor="description" className="textShadow">Beskrivelse</label>
                 <textarea type="text" id="description" name="description" />
                 <input type="submit" className="titleFont" value={"Send"} />
-                {error && <MsgBox margin={false} success={false} msg={error}/>}
-                {success && <MsgBox msg={success} margin={false} success={true}/>}
+                {error && <MsgBox margin={false} success={false} msg={error} setter={setError}/>}
+                {success && <FullScreenSuccess close={() => {
+                    setSuccess(null);
+                }} firstMsg={`Tak for din besked ${success}`} secondMsg={"Vi vender tilbage hurtigst muligt!"}/>}
             </form>
         </div>
 

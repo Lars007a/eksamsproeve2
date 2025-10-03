@@ -9,9 +9,9 @@ export default function teamsSec({}) {
 
   return (
     <>
+      <section className={`${styles.teams} container`}>
       {res.loading && <LoadingSpinner />}
       {res.error && <MsgBox msg={res.error} />}
-      <section className={`${styles.teams} container`}>
         <div className={styles.grid}>
           {res?.data &&
             res.data.map((element, index) => {

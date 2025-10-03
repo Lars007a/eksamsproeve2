@@ -26,11 +26,11 @@ export default function useCart() {
         return true;
     }
 
-    function removeFromCart(idToDelete) {
+    function removeFromCart(cartItem) { //Tager et helt objektet fra cartArrayen.
 
         let newArray = [...cart]; //Laver en copy af kurven.
 
-        const index = newArray.findIndex((e) => e.item._id == idToDelete);
+        const index = newArray.findIndex((e) => JSON.stringify(e) == JSON.stringify(cartItem));
 
         if(index == -1) {
             //vi fandt ikke noget id.

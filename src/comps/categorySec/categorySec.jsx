@@ -22,7 +22,9 @@ export default function CategorySec({}) {
       {dishes.loading && cats.loading ? (
         <LoadingSpinner margin={true} />
       ) : dishes.error && cats.error ? (
-        <MsgBox margin={true} msg={dishes.error || cats.error} />
+        <div className="container">
+          <MsgBox margin={true} msg={dishes.error || cats.error} />
+          </div>
       ) : (
         <>
           <section className={styles.categories}>

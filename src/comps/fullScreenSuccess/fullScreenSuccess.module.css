@@ -1,0 +1,54 @@
+.popup {
+    position: fixed;
+    inset: 0;
+    z-index: 20;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+
+    &::after {
+        content: "";
+        display: block;
+        inset: 0;
+        position: absolute;
+        background-color: rgba(255,255,255,0.25);
+        z-index: 21;
+    }
+
+    .content {
+        position: relative;
+        z-index: 22; /* position og z-index, så kommer over overlayet. */
+        background-color: rgba(255, 255, 255, 0.5);
+        padding-block: 50px;
+        padding-inline: 20px;
+        
+        > p {
+            text-align: center;
+            width: 100%;
+            display: block;
+        }
+
+        > p:has(+ p) {
+            margin-bottom: 8px;
+        }
+    }
+
+    svg {
+        color: var(--white);
+        height: 30px;
+        width: auto;
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        cursor: pointer;
+        z-index: 22;
+    }
+
+
+
+}

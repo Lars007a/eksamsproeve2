@@ -10,8 +10,6 @@ import Contact from "./pages/contact.jsx";
 import DishPage from "./pages/dishPage.jsx";
 import Backoffice from "./pages/backoffice.jsx";
 import { BrowserRouter, useRoutes } from "react-router-dom";
-import ErrorBox from "./comps/msgBox/msgBox.jsx";
-import LoadingSpinner from "./comps/spinner/spinner.jsx";
 
 export default function App() {
   const routes = useRoutes([
