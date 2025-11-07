@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 
 export function useSendGetRequest(endpoint) {
     
-    const apiUrl = "http://127.0.0.1:3042"; //api url, så at det bare kan ændres herfra.
+    const apiUrl = "http://167.99.218.24:5001"; //api url, så at det bare kan ændres herfra.
 
     const [data, setData] = useState(null);
     const [error, setError] = useState(null);
@@ -41,7 +41,7 @@ export function useSendGetRequest(endpoint) {
 
 export function useSendDataRequest() {
 
-    const apiUrl = "http://127.0.0.1:3042"
+    const apiUrl = "http://167.99.218.24:5001"
 
 
     function sendJson(endpoint, method, body) {
@@ -64,7 +64,7 @@ export function useSendDataRequest() {
 
     function sendForm(endpoint, method, body) {
 
-        const promise = fetch(`http://127.0.0.1:3042/${endpoint}`, {
+        const promise = fetch(`http://167.99.218.24:5001/${endpoint}`, {
             method: method,
             body: body
         }).then((val) => {
