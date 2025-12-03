@@ -27,3 +27,5 @@ dist-ssr
 ting.txt
 rapport-lars.pdf
 rapport-lars.md
+# Local Netlify folder
+.netlify
